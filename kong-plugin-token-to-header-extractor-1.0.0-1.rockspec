@@ -7,7 +7,7 @@ supported_platforms = {"linux", "macosx"}
 
 source = {
    url = "git://github.com/vnwonah/kong-token-to-header-extractor",
-   tag = "v1.0.0"
+   tag = "v1.0"
 }
 description = {
    summary = "Kong Plugin for extracting values from token and adding them as headers in upstream request",
