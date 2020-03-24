@@ -6,7 +6,7 @@ local pluginName = package:match("^kong%-plugin%-(.+)$")
 supported_platforms = {"linux", "macosx"}
 
 source = {
-   url = "https://github.com/vnwonah/kong-token-to-header-extractor",
+   url = "git://github.com/vnwonah/kong-token-to-header-extractor",
    tag = "v1.0.0"
 }
 description = {
@@ -22,6 +22,7 @@ description = {
    license = "MIT/X11" 
 }
 dependencies = {
+  "lua ~> 5.1"
 }
 
 build = {
