@@ -1,8 +1,7 @@
 local typedefs = require "kong.db.schema.typedefs"
 
 return {
-    token_to_header_definitions = {
-
+    token_to_header_extractor = {
         name = "token_to_header_extractor",
         primary_key = { "id" },
         generate_admin_api = true,
