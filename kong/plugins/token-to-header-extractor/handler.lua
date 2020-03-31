@@ -2,7 +2,7 @@ local BasePlugin = require "kong.plugins.base_plugin"
 local TokenToHeaderExtractorHandler = BasePlugin:extend()
 
 TokenToHeaderExtractorHandler.VERSION  = "0.1.0"
-TokenToHeaderExtractorHandler.PRIORITY = 1
+TokenToHeaderExtractorHandler.PRIORITY = 2
 
 function TokenToHeaderExtractorHandler:new()
     TokenToHeaderExtractorHandler.super.new(self, "token-to-header-extractor")
@@ -16,3 +16,5 @@ function TokenToHeaderExtractorHandler:rewrite(config)
     -- Implement any custom logic here
     error.log("Hello FROM LUA!!!")
 end
+
+return TokenToHeaderExtractorHandler
