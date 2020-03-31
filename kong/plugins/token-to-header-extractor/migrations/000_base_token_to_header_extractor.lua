@@ -3,9 +3,9 @@ return {
     up = [[
       CREATE TABLE IF NOT EXISTS "token_to_header_extractor" (
         "id"                UUID                         PRIMARY KEY,
-        "created_at"        TIMESTAMP WITH TIME ZONE     DEFAULT (CURRENT_TIMESTAMP(0) AT TIME ZONE 'UTC')
-        "token_name"        TEXT
-        "token_value_name"  TEXT                         
+        "created_at"        TIMESTAMP WITH TIME ZONE     DEFAULT (CURRENT_TIMESTAMP(0) AT TIME ZONE 'UTC'),
+        "token_name"        TEXT,
+        "token_value_name"  TEXT,                         
         "header_name"       TEXT                         
       );
       DO $$
