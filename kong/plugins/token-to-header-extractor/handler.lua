@@ -1,6 +1,9 @@
 local BasePlugin = require "kong.plugins.base_plugin"
 local TokenToHeaderExtractorHandler = BasePlugin:extend()
 
+TokenToHeaderExtractorHandler.VERSION  = "0.1.0"
+TokenToHeaderExtractorHandler.PRIORITY = 1
+
 function TokenToHeaderExtractorHandler:new()
     TokenToHeaderExtractorHandler.super.new(self, "token-to-header-extractor")
 end

@@ -1,9 +1,29 @@
+local typedefs = require "kong.db.schema.typedefs"
+
 return {
-    no_consumer = true, -- this plugin will only be applied to Services or Routes,
-    fields = {
-      -- Describe your plugin's configuration's schema here.
-      token_name = { type = "string", required = true},
-      token_value_name = { type = "string", required = true},
-      header_name = { type = "string", required = true}
+  name = "token-to-header-extractor",
+  fields = {
+    {
+      consumer = typedefs.no_consumer
     },
+    {
+      config = {
+        type = "record",
+        fields = {
+          token_name = { 
+            type = "string", 
+            required = true
+          },
+          token_value_name = { 
+            type = "string", 
+            required = true
+          },
+          header_name = { 
+            type = "string", 
+            required = true
+          },
+        },
+      },
+    },
+  },
 }
