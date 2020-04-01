@@ -1,3 +1,4 @@
+rockspec_format = "3.0"
 package = "kong-plugin-token-to-header-extractor"
 version = "0.1.0-1"
 
