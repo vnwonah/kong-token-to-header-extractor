@@ -1,8 +1,6 @@
-local typedefs = require "kong.db.schema.typedefs"
-
 return {
-  name = "token-to-header-extractor",
+  no_consumer = true,
   fields = {
-    { consumer = typedefs.no_consumer }
+    continue_on_error = { type = "string", required = true, default = "yes" }
   }
-} 
+}
