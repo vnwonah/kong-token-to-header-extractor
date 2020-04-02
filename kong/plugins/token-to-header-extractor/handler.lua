@@ -8,28 +8,28 @@ local kong = kong
 local TokenToHeaderExtractorHandler = BasePlugin:extend()
 
 TokenToHeaderExtractorHandler.VERSION  = "0.1.0"
-TokenToHeaderExtractorHandler.PRIORITY = 2
+-- TokenToHeaderExtractorHandler.PRIORITY = 2
 
 function TokenToHeaderExtractorHandler:new()
     TokenToHeaderExtractorHandler.super.new(self, "token-to-header-extractor")
 end
 
-function TokenToHeaderExtractorHandler:rewrite(config)
+function TokenToHeaderExtractorHandler:access(conf)
     -- Eventually, execute the parent implementation
     -- (will log that your plugin is entering this context)
-    TokenToHeaderExtractorHandler.super.rewrite(self)
+    TokenToHeaderExtractorHandler.super.access(self)
   
     -- Implement any custom logic here
-    --local continue_on_error = conf.continue_on_error
-    kong.log("Executing token to header extractor")
+    local continue_on_error = conf.continue_on_error
+    kong.log("Executing token to header extractor, continue on error is: ".. continue_on_error)
 
-    for entity, err on kong.db.token_to_header_extractor:each(1000) do
+   --[[  for entity, err on kong.db.token_to_header_extractor:each(1000) do
         if err then
             kong.log.err("Error when iterating over keyauth credentials: " .. err)
             return nil
         end
         kong.log("token_name: " .. entity.token_name)
-    end
+    end ]]
 
 end
 
