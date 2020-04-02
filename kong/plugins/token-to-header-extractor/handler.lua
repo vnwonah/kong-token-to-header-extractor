@@ -30,7 +30,7 @@ function TokenToHeaderExtractorHandler:access(conf)
         kong.log("token_name: " .. entity.token_name)
         local header = ngx.req.get_headers()[entity.token_name];
         if header then
-            local jwt, err = jwt_decoder:new(token)
+            local jwt, err = jwt_decoder:new(header)
             local claims = jwt.claims
             for claim_key, claim_value in pairs(claims) do
                 if entity.token_value_name == claim_key then
