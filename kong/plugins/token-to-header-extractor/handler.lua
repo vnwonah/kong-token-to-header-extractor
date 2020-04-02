@@ -21,8 +21,6 @@ function TokenToHeaderExtractorHandler:access(conf)
   
     -- Implement any custom logic here
     local log_errors = conf.log_errors
-    kong.log("Executing token to header extractor continue on error is: " .. log_errors)
-
     
     for entity, err in kong.db.token_to_header_extractor:each(100) do
         if err then
