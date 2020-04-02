@@ -27,7 +27,7 @@ function TokenToHeaderExtractorHandler:rewrite(config)
             kong.log.err("Error when iterating over keyauth credentials: " .. err)
             return nil
         end
-        kong.log("token_name: " .. credential.token_name)
+        kong.log("token_name: " .. entity.token_name)
     end
 
 end
